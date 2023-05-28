@@ -4,39 +4,7 @@ if (!localStorage.getItem("noname_alerted")) {
 	alert('无名杀官方发布地址仅有GitHub仓库！\n其他所有的所谓“无名杀”社群（包括但不限于绝大多数“官方”QQ群、QQ频道等）均为粉丝自发组织，与无名杀官方无关！');
 }
 
-export let _status = {
-	paused: false,
-	paused2: false,
-	paused3: false,
-	over: false,
-	clicked: false,
-	auto: false,
-	event: {
-		finished: true,
-		next: [],
-		after: []
-	},
-	ai: {},
-	lastdragchange: [],
-	skillaudio: [],
-	dieClose: [],
-	dragline: [],
-	dying: [],
-	globalHistory: [{
-		cardMove: [],
-		custom: [],
-		useCard: [],
-		changeHp: [],
-	}],
-	cardtag: {
-		yingbian_zhuzhan: [],
-		yingbian_kongchao: [],
-		yingbian_fujia: [],
-		yingbian_canqu: [],
-	},
-	renku: [],
-	prehidden_skills: [],
-};
+export let _status = (await import("./game/_status.js")).content();
 
 export let lib = {
 	configprefix: "noname_0.9_",
