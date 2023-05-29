@@ -19,7 +19,9 @@ export class Event {
 
 	_neutralized?: boolean;
 
-	constructor(opts?: "root" | boolean, trigger?: Event);
+	constructor(name: string, trigger?: boolean);
+
+	cancel(all?: boolean, player?: any, notrigger?: "notrigger");
 
 	changeToZero(): void;
 
@@ -27,6 +29,12 @@ export class Event {
 
 	goto(step: number): void;
 
+	neutralize(event: Event): void;
+
 	redo(): void;
+
+	trigger(name: string): void;
+
+	untrigger(all?: boolean, player?: any);
 
 }
