@@ -1,12 +1,13 @@
+import STATUS from "./game/_status.js";
 
 if (!localStorage.getItem("noname_alerted")) {
 	localStorage.setItem("noname_alerted", true);
 	alert('无名杀官方发布地址仅有GitHub仓库！\n其他所有的所谓“无名杀”社群（包括但不限于绝大多数“官方”QQ群、QQ频道等）均为粉丝自发组织，与无名杀官方无关！');
 }
 
-export let _status = (await import("./game/_status.js")).content();
+let _status = globalThis._status = new STATUS();
 
-export let lib = {
+let lib = globalThis.lib = {
 	configprefix: "noname_0.9_",
 	versionOL: 27,
 	updateURLS: {

@@ -6,7 +6,7 @@ end_of_line = crlf
 tab_size = 4
 insert_final_newline = true
 
-[*.js]
+[*.{js,ts}]
 charset = utf-8
 indent_style = tab
 indent_size = 4
